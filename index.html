@@ -17,51 +17,56 @@
 
 </head>
 <body>
+  <div class="caja">
 
-  <div class="fondo-azul">
+    <div class="fondo-azul">
+      
+    </div>
+  
+    <div id="map">
+      <p class="texto-mapa" id="texto-mapa">Busca tu IP o Dominio ya!</p>
+    </div>
+  
+    <div class="container">
+      <p class="titulo">IP Address Tracker</p>
+      <div>
+        <input class="buscador-ip" type="text" placeholder="Search for any IP address or domain" id="buscador"/>
+        <button class="boton-ip" id="boton">></button>
+      </div>
+  
+      <div class="info">
+        <div class="cuadrito">
+          <p class="titulo-cuadrito">IP ADDRESS</p>
+          <p class="contenido-cuadrito" id="ip"></p>
+        </div>
+        <hr width="1" style="height: 60%; color: rgb(185, 184, 184); margin: 25px;">
+        <div class="cuadrito">
+          <p class="titulo-cuadrito">LOCATION</p>
+          <p class="contenido-cuadrito" id="location"></p>
+        </div>
+        <hr width="1" style="height: 60%; color: rgb(185, 184, 184); margin: 25px;">
+        <div class="cuadrito">
+          <p class="titulo-cuadrito">TIMEZONE</p>
+          <p class="contenido-cuadrito" id="timezone"></p>
+        </div>
+        <hr width="1" style="height: 60%; color: rgb(185, 184, 184); margin: 25px;">
+        <div class="cuadrito">
+          <p class="titulo-cuadrito">ISP</p>
+          <p class="contenido-cuadrito" id="isp"></p>
+        </div>
+      </div>
+  
+    </div>
+
     
   </div>
-
-  <div id="map">
-
-  </div>
-
-  <div class="container">
-    <p class="titulo">IP Address Tracker</p>
-    <div>
-      <input class="buscador-ip" type="text" placeholder="Search for any IP address or domain" id="buscador"/>
-      <button class="boton-ip" id="boton">></button>
-    </div>
-
-    <div class="info">
-      <div class="cuadrito">
-        <p class="titulo-cuadrito">IP ADDRESS</p>
-        <p class="contenido-cuadrito" id="ip"></p>
-      </div>
-      <hr width="1" style="height: 60%; color: rgb(185, 184, 184); margin: 25px;">
-      <div class="cuadrito">
-        <p class="titulo-cuadrito">LOCATION</p>
-        <p class="contenido-cuadrito" id="location"></p>
-      </div>
-      <hr width="1" style="height: 60%; color: rgb(185, 184, 184); margin: 25px;">
-      <div class="cuadrito">
-        <p class="titulo-cuadrito">TIMEZONE</p>
-        <p class="contenido-cuadrito" id="timezone"></p>
-      </div>
-      <hr width="1" style="height: 60%; color: rgb(185, 184, 184); margin: 25px;">
-      <div class="cuadrito">
-        <p class="titulo-cuadrito">ISP</p>
-        <p class="contenido-cuadrito" id="isp"></p>
-      </div>
-    </div>
-
-  </div>
-
-
-  <div class="attribution">
+  
+  <div>
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="https://github.com/Zepoide">Santiago Tamarit</a>.
   </div>
+
+
 
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="

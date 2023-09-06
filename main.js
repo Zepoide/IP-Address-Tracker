@@ -4,6 +4,7 @@ const htmlTimeZone = document.getElementById('timezone')
 const htmlISP = document.getElementById('isp')
 const htmlBuscador = document.getElementById('buscador')
 const boton = document.getElementById('boton')
+const htmlTextoMapa = document.getElementById('texto-mapa')
 
 async function fetchIP(contenido){
     if (Number(contenido[0]) >= 0 && Number(contenido[0]) <= 9) {
@@ -13,9 +14,9 @@ async function fetchIP(contenido){
         var domain = contenido
         var ipAddress = ''
     }
-    console.log(ipAddress)
-    console.log(domain)
-    // REVISAR NO FUNCIONA CON DOMAIN TODAVIA
+
+    htmlTextoMapa.innerHTML = 'Loading...'
+
     const response = await fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_Y3dcFV0k0BiqqqB9Pu6sua24ESMRD&ipAddress=${ipAddress}&domain=${domain}`)
     const json = await response.json()
     const country = json.location.country
@@ -46,6 +47,8 @@ async function fetchIP(contenido){
     htmlLocation.innerHTML = `${city}, ${country} ${postalCode}`
     htmlTimeZone.innerHTML = timezone
     htmlISP.innerHTML = isp
+
+    htmlTextoMapa.innerHTML = ''
 }
 
 boton.addEventListener('click', ()=>{
