@@ -6,6 +6,13 @@ const htmlBuscador = document.getElementById('buscador')
 const boton = document.getElementById('boton')
 const htmlTextoMapa = document.getElementById('texto-mapa')
 
+var map = L.map('map')
+
+var myIcon = L.icon({
+    iconUrl: '/images/icon-location.svg',
+    iconSize: [60, 70]
+});
+
 async function fetchIP(contenido){
     if (Number(contenido[0]) >= 0 && Number(contenido[0]) <= 9) {
         var ipAddress = contenido
@@ -29,23 +36,19 @@ async function fetchIP(contenido){
     const lat = json.location.lat
     const lng = json.location.lng
     
-    var map = L.map('map').setView([lat, lng], 13);
+    map.setView([lat, lng], 13);
     
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
         maxZoom: 19,
         attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
     }).addTo(map);
     
-    var myIcon = L.icon({
-        iconUrl: '/images/icon-location.svg',
-        iconSize: [60, 70]
-    });
 
     L.marker([lat, lng], {icon: myIcon}).addTo(map);
 
     htmlIP.innerHTML = ip
     htmlLocation.innerHTML = `${city}, ${country} ${postalCode}`
-    htmlTimeZone.innerHTML = timezone
+    htmlTimeZone.innerHTML = `UTC${timezone}`
     htmlISP.innerHTML = isp
 
     htmlTextoMapa.innerHTML = ''
